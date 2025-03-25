@@ -43,12 +43,12 @@ const slides = [
 const Header = () => {
     return (
         <div className="font-sans w-[1100px] mx-auto">
- 
+
             <nav className="flex justify-between items-center mt-[10px] pb-4 border-b">
                 <img src={green} alt="Logo" />
                 <div className="space-x-6 font-semibold text-[18px]">
                     <a href="#" className="text-gray-600">Home</a>
-                    <a href="#" className="text-gray-600">Blog</a>
+                    <a href="#" className="text-gray-600 ">Blog</a>
                 </div>
                 <div className="space-x-4 flex items-center">
                     <img src={search} alt="Search" />
@@ -66,11 +66,13 @@ const Header = () => {
                         <SwiperSlide key={index}>
                             <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto pl-10">
                                 <div className="md:w-1/2 text-left">
-                                <span>{slide.welcome}</span>
-                                    <h2 className="text-[46px] font-black text-gray-900">
+                                    <span>{slide.welcome}</span>
+
+                                    <h2 className="text-[60px] font-black text-gray-900 leading-none">
                                         {slide.title.split("PLANET")[0]}
                                         <span className="text-green-600">PLANET</span>
                                     </h2>
+
                                     <p className="text-gray-600 my-4">{slide.description}</p>
                                     <button className="bg-green-600 text-white px-6 py-2 rounded-lg">
                                         {slide.buttonText}
