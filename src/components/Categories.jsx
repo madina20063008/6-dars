@@ -8,14 +8,12 @@ const Categories = () => {
 
     const token = "67e1514e2ac3b760a778e38a";
     const apiUrl = `https://green-shop-backend.onrender.com/api/flower/category?access_token=${token}`;
-    const [price, setPrice] = useState([0, 1000]); // Min & Max Price
+    const [price, setPrice] = useState([0, 1000]);
 
-    // Handle slider movement
     const handleChange = (event) => {
         const value = Number(event.target.value);
         const mid = (price[0] + price[1]) / 2;
 
-        // Adjust min or max value based on slider position
         if (value < mid) {
             setPrice([value, price[1]]);
         } else {
@@ -84,7 +82,6 @@ const Categories = () => {
             <div className="mt-[20px]">
                 <h3 className="text-lg font-semibold">Price Range</h3>
 
-                {/* Custom Two-Sided Slider */}
                 <div className="relative mt-5">
                     <input
                         type="range"
@@ -104,7 +101,6 @@ const Categories = () => {
                     />
                 </div>
 
-                {/* Display Selected Price Range */}
                 <p className="mt-[40px] text-[16px] text-gray-700 ">
                     Price: <span className="text-green-600 font-bold">${price[0]} - ${price[1]}</span>
                 </p>

@@ -3,15 +3,11 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
-import green from '../assets/green.svg';
 import header1 from '../assets/header1.png';
 import header2 from '../assets/header2.png';
 import header3 from '../assets/header3.png';
-import search from '../assets/search.png';
-import bell from '../assets/bell.png';
-import savat from '../assets/savat.png';
-import button from '../assets/button.png';
+import Navbar from "./Navbar";
+
 const slides = [
     {
         welcome: "WELCOME TO GREENSHOP",
@@ -43,24 +39,8 @@ const slides = [
 const Header = () => {
     return (
         <div className="font-sans w-[1100px] mx-auto">
-
-            <nav className="flex justify-between items-center mt-[10px] pb-4 border-b">
-                <img src={green} alt="Logo" />
-                <div className="space-x-6 font-semibold text-[18px]">
-                    <a href="#" className="text-gray-600">Home</a>
-                    <a href="#" className="text-gray-600 ">Blog</a>
-                </div>
-                <div className="space-x-4 flex items-center">
-                    <img src={search} alt="Search" />
-                    <img src={bell} alt="Notifications" />
-                    <img src={savat} alt="Cart" />
-                    <button className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center">
-                        <img src={button} alt="Login Icon" className="mr-2" /> Login
-                    </button>
-                </div>
-            </nav>
-
-            <div className="w-full bg-gray-100 py-10 mt-[20px]">
+            <Navbar/>
+            <div className="w-full bg-gray-100 py-10 mt-[80px]">
                 <Swiper spaceBetween={50} slidesPerView={1}>
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
