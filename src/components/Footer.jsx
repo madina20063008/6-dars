@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="w-[1100px] bg-gray-100 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-sm p-[30px]">
 
         <div>
-          <h3 className="font-bold mb-2 text-[20px]">My Account</h3>
+          <h3 className="font-bold mb-2 text-[18px]">My Account</h3>
           <ul className="text-[20px]">
             <li className="mt-[20px]"><a href="#" className="hover:text-green-600 mt-[20px]">My Account</a></li>
             <li className="mt-[20px]"><a href="#" className="hover:text-green-600 mt-[20px]">Address</a></li>
@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         
         <div>
-          <h3 className="font-bold mb-2 text-[20px]">Categories</h3>
+          <h3 className="font-bold mb-2 text-[18px]">Categories</h3>
           <ul className="text-[20px]">
             <li className="mt-[20px]"><a href="#" className="hover:text-green-600">House Plants</a></li>
             <li className="mt-[20px]"><a href="#" className="hover:text-green-600">Potter Plants</a></li>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-bold mb-2 text-[20px]">Social Media</h3>
+          <h3 className="font-bold mb-2 text-[18px]">Social Media</h3>
           <div className="flex space-x-2 mb-4 mt-[30px]">
             <img src={facebook} alt=""/>
             <img src={instagram} alt="" />
@@ -44,7 +44,7 @@ const Footer = () => {
             <img src={youtube} alt="" />
           </div>
           
-          <h3 className="font-bold mb-2 text-[20px] mt-[50px]">We accept</h3>
+          <h3 className="font-bold mb-2 text-[18px] mt-[50px]">We accept</h3>
           <div className="flex space-x-2 mt-[30px]">
             <img src={paypal} alt="PayPal" className="h-6" />
             <img src={mastercard} alt="Mastercard" className="h-6" />
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <p className="text-center font-bold text-[20px] mt-6">© 2023 GreenShop. All Rights Reserved.</p>
+      <p className="text-center font-bold text-[18px] my-4">© 2023 GreenShop. All Rights Reserved.</p>
     </footer>
   );
 };
