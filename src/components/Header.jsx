@@ -39,7 +39,7 @@ const slides = [
 const Header = () => {
     return (
         <div className="font-sans w-[1100px] mx-auto">
-            <Navbar/>
+            
             <div className="w-full bg-gray-100 py-10 mt-[80px]">
                 <Swiper spaceBetween={50} slidesPerView={1}>
                     {slides.map((slide, index) => (

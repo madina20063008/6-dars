@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import search from '../assets/search.png';
 import bell from '../assets/bell.png';
 import savat from '../assets/savat.png';
 import button from '../assets/button.png';
 import green from '../assets/green.svg';
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,6 +15,7 @@ function Navbar() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loggedInUser = sessionStorage.getItem('loggedInUser');
@@ -36,7 +37,8 @@ function Navbar() {
             return;
         }
 
-        const newUser = { name, email, password };
+        // ✅ Store surname along with name
+        const newUser = { name, surname, email, password };
         localStorage.setItem(email, JSON.stringify(newUser));
 
         alert('Registration successful! You can now log in.');
@@ -76,7 +78,7 @@ function Navbar() {
                     <button
                         onClick={() => {
                             if (user) {
-                                handleLogout();
+                                navigate('/dashboard');
                             } else {
                                 setIsModalOpen(true);
                                 setIsRegister(false);
@@ -85,7 +87,7 @@ function Navbar() {
                         className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center"
                     >
                         <img src={button} alt="User Icon" className="mr-2" />
-                        {user ? user.name : 'Login'}
+                        {user ? user.name : 'Login'} {/* ✅ Display only first name */}
                     </button>
                 </div>
             </nav>
@@ -140,18 +142,9 @@ function Navbar() {
                                     placeholder="Password"
                                     className="w-full border px-3 py-2 rounded-md mb-2"
                                 />
-                                <div className="flex justify-end items-center">
-                                    <a href="#" className="text-green-600 text-sm">Forgot Password?</a>
-                                </div>
                                 <button onClick={handleLogin} className="w-full bg-green-600 text-white py-2 rounded-md mt-4">
                                     Login
                                 </button>
-                                <div className="mt-4 text-center text-gray-600 text-sm">Or login with</div>
-                                <div className="flex flex-col mt-2 space-y-2 text-sm">
-                                    <button className="w-full border py-2 rounded-md ">Login with Google</button>
-                                    <button className="w-full border py-2 rounded-md">Login with Facebook</button>
-                                    <button className="w-full border py-2 rounded-md">Login with QR Code</button>
-                                </div>
                             </>
                         ) : (
                             <>
@@ -196,11 +189,6 @@ function Navbar() {
                                 <button onClick={handleRegister} className="w-full bg-green-600 text-white py-2 rounded-md mt-4">
                                     Register
                                 </button>
-                                <div className="mt-4 text-center text-gray-600 text-sm">Or register with</div>
-                                <div className="flex flex-col mt-2 space-y-2 text-sm">
-                                    <button className="w-full border py-2 rounded-md">Continue with Google</button>
-                                    <button className="w-full border py-2 rounded-md">Continue with Facebook</button>
-                                </div>
                             </>
                         )}
                     </div>

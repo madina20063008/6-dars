@@ -2,8 +2,19 @@
 import { Categories } from "./CategoriesMain";
 import plant from "../assets/plant.png";
 import AllDiscounts from "./AllDiscounts";
+import { useState } from "react";
 export const token = "67e1514e2ac3b760a778e38a";
 const CategoriesComponent = ({ selectedCategory, setSelectedCategory }) => {
+    // const handleRange = () => {
+    //     const [range, setRange] = useState([
+    //         useSearchParams.get("range_min") || 0,
+    //         useSearchParams.get("range_max") || 1000,
+    //     ])
+    // }
+    // const updateRange = () => {
+    //         searchParams.get("range_min", min),
+    //         searchParams.get("range_max", max),
+    // }
     return (
         <div className="p-4 bg-[#FBFBFB] shadow-md rounded-md w-64">
             <h2 className="text-lg font-semibold mb-2">Categories</h2>

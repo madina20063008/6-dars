@@ -12,18 +12,31 @@ export const Categories = [
     { name: "Accessories", key: "accessories", count: 13 },
 ];
 
+// export const fetchProducts = async (category) => {
+//     const response = await fetch(
+//         `https://green-shop-backend.onrender.com/api/flower/category/${category}?access_token=${token}`
+//     );
+    
+//     if (!response.ok) throw new Error("Failed to fetch data");
+    
+//     const data = await response.json();
+//     return data.data || [];
+    
+// };
+
+
 export const fetchProducts = async (category) => {
-    const response = await fetch(
-        `https://green-shop-backend.onrender.com/api/flower/category/${category}?access_token=${token}`
-    );
-    
-    if (!response.ok) throw new Error("Failed to fetch data");
-    
+    const url = `https://green-shop-backend.onrender.com/api/flower/category/${category}?access_token=${token}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Fetch error:", response.status, errorText);
+        throw new Error("Failed to fetch data");
+    }
+
     const data = await response.json();
     return data.data || [];
-    
 };
-
-
-  
 

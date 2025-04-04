@@ -6,7 +6,7 @@ import { fetchProducts } from "./CategoriesMain";
 
 const ProductList = ({ categoryType, sortOption }) => {
   const { data: products = [], isLoading, error } = useQuery({
-    queryKey: ["products", categoryType],
+    queryKey: ["products", categoryType || "House Plants"],
     queryFn: () => fetchProducts(categoryType),
   });
 
@@ -22,7 +22,8 @@ const ProductList = ({ categoryType, sortOption }) => {
       return 0; 
     });
   }, [products, sortOption]);
-
+ 
+  
   return (
     <div className="p-4">
       {isLoading && <p className="text-gray-500 text-center">Loading...</p>}
