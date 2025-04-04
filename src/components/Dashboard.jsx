@@ -130,7 +130,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import user from '../assets/User.svg';
-import bag from '../assets/bag.png';
+import bag from '../assets/Bag.png';
 import location from '../assets/Location.png';
 import heart from '../assets/heart.png';
 import clock from '../assets/clock.png';
