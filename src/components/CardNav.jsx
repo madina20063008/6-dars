@@ -1,25 +1,25 @@
 
 import React from "react";
 
-const CardNav = ({ setCategoryType, setSortOption }) => {
+const CardNav = ({ setSortOption }) => {
   return (
     <div className="flex items-center justify-between pl-4 gap-[300px]">
       <div className="flex space-x-6">
         <button 
           className="text-green-600 border-b-2 border-green-600 font-medium"
-          onClick={() => setCategoryType("all-plants")}
+          
         >
           All Plants
         </button>
         <button 
           className="text-gray-900 hover:text-black font-medium"
-          onClick={() => setCategoryType("new-arrivals")}
+        
         >
           New Arrivals
         </button>
         <button 
           className="text-gray-900 hover:text-black font-medium"
-          onClick={() => setCategoryType("sale")}
+       
         >
           Sale
         </button>

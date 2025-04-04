@@ -37,7 +37,6 @@ function Navbar() {
             return;
         }
 
-        // ✅ Store surname along with name
         const newUser = { name, surname, email, password };
         localStorage.setItem(email, JSON.stringify(newUser));
 
@@ -56,11 +55,6 @@ function Navbar() {
         } else {
             alert('Invalid email or password!');
         }
-    };
-
-    const handleLogout = () => {
-        sessionStorage.removeItem('loggedInUser');
-        setUser(null);
     };
 
     return (

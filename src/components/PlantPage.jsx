@@ -1,28 +1,30 @@
+
 import React, { useState } from "react";
-import CategoriesComponent from "./Categories";  // Sidebar if needed
-import CardNav from "./CardNav";
-import ProductList from "./CardList";  // Product list component
+import CategoriesComponent from "./Categories";  
+import CardNav from "./CardNav";                
+import ProductList from "./CardList";           
 
 const PlantPage = ({ isUserDetailPage }) => {
-  const [categoryType, setCategoryType] = useState("all-plants");  // Default category set to "all-plants"
+
+  const [categoryType, setCategoryType] = useState("house-plants");
   const [sortOption, setSortOption] = useState("default");
 
   return (
     <div className="flex w-[1100px] mx-auto mt-[50px] gap-[50px]">
       {!isUserDetailPage && (
         <CategoriesComponent
-          selectedCategory={categoryType}   // Sync category state with sidebar (if used)
+          selectedCategory={categoryType}
           setSelectedCategory={setCategoryType}
         />
       )}
-      <div>
+      <div className="flex flex-col gap-4 flex-1">
         <CardNav
-          setCategoryType={setCategoryType}   // Update categoryType when a button is clicked
+          setCategoryType={setCategoryType}
           setSortOption={setSortOption}
-          selectedCategory={categoryType}      // Active category for visual indication
+          selectedCategory={categoryType}
         />
         <ProductList
-          categoryType={categoryType}          // Fetch products based on the selected category
+          categoryType={categoryType}
           sortOption={sortOption}
         />
       </div>
@@ -31,5 +33,3 @@ const PlantPage = ({ isUserDetailPage }) => {
 };
 
 export default PlantPage;
-
-

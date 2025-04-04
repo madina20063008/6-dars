@@ -6,9 +6,13 @@ import { fetchProducts } from "./CategoriesMain";
 
 const ProductList = ({ categoryType, sortOption }) => {
   const { data: products = [], isLoading, error } = useQuery({
-    queryKey: ["products", categoryType || "House Plants"],
-    queryFn: () => fetchProducts(categoryType),
+    queryKey: ["products", categoryType || "house-plants"],  // Ensure a valid default category
+    queryFn: () => {
+      console.log("🔥 Fetching products for category:", categoryType);  // ✅ Debugging categoryType
+      return fetchProducts(categoryType || "house-plants");  // Provide a default category
+    },
   });
+  
 
   const sortedProducts = useMemo(() => {
     if (!products || products.length === 0) return [];
