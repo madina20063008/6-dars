@@ -129,7 +129,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import user from '../assets/user.svg';
+import user from '../assets/User.svg';
 import bag from '../assets/bag.png';
 import location from '../assets/Location.png';
 import heart from '../assets/heart.png';
