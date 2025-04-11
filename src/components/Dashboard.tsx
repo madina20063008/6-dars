@@ -40,7 +40,7 @@ function Dashboard() {
 
     const handleLogout = () => {
         sessionStorage.removeItem('loggedInUser');
-        navigate('/login'); // Redirect to login page after logout
+        navigate('/login'); 
     };
 
     return (
